@@ -1,1 +1,21 @@
-
+{
+  "name": "Scratch",
+  "short_name": "Scratch",
+  "description": "Imagine explore share",
+  "start_url": "https://thom283.github.io/ScratchMobile/Scratch%20Mobile",
+  "display": "standalone", 
+  "background_color": "#ffffff",
+  "theme_color": "#3f51b5", 
+  "icons": [
+    {
+      "src": "https://thom283.github.io/ScratchMobile/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://thom283.github.io/ScratchMobile/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
