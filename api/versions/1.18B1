@@ -1,5 +1,6 @@
 {"apifeed":"https://raw.githubusercontent.com/thom283/ScratchMobile/refs/heads/main/projects",
 "apis":"https://raw.githubusercontent.com/thom283/ScratchMobile/refs/heads/main/projects",
+"apicommon":"https://raw.githubusercontent.com/thom283/ScratchMobile/refs/heads/main/common",
 "pfploads":"1",
 "bioloads":"1",
 "desc":"1",
