@@ -2,37 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport">
     <title>Image</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 1rem;
-            border-radius: 50%;
+
         }
         .container {
-            @apply flex justify-center items-center w-[212px] h-[212px] overflow-hidden rounded-lg shadow-lg;
+            @apply flex w-[218px] h-[218px] rounded-lg shadow-lg;
 }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img id="projectImage" class="w-full h-full object-cover" src="https://placehold.co/480x360/ffffff/000000?text=No+ID" alt="Project Image">
+        <img id="projectImage" class="w-full h-full object-cover" src="https://placehold.co/480x360/ffffff/000000?text=" alt="Project Image">
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const imageElement = document.getElementById('projectImage');
             
-            // Get the URL search parameters
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get('id');
 
@@ -51,4 +41,3 @@
     </script>
 </body>
 </html>
-
