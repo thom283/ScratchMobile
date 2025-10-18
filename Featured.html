@@ -1,6 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>h</title>
@@ -30,11 +32,13 @@
             flex-shrink: 0;
             margin-right: 20px;
             background-color: white;
+            cursor: pointer; 
         }
         .image-container img {
             width: 218px;
             height: 165px;
             object-fit: center;
+            
         }
         .text-content {
             flex-grow: 1;
@@ -56,7 +60,6 @@
             margin-top: 15px;
         }
 
-
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -77,11 +80,11 @@
         }
     </style>
 </head>
-<h1>Featured Addons</h1>
 <body>
+    <h1>Featured Addons</h1>
             <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1216355618_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1216355618_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
             <h1 class="title">Hats!</h1>
@@ -91,7 +94,7 @@
     </div>
         <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1220081907_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1220081907_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
             <h1 class="title">Follower count</h1>
@@ -101,7 +104,7 @@
     </div>
            <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1220605083_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1220605083_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
             <h1 class="title">Project roaster</h1>
@@ -111,7 +114,7 @@
     </div>
     <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1216331218_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1216331218_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
             <h1 class="title">Delete Rounded Corners</h1>
@@ -121,7 +124,7 @@
     </div>
         <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1221073295_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1221073295_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
             <h1 class="title">More players</h1>
@@ -131,14 +134,24 @@
     </div>
     <div class="container">
         <div class="image-container">
-            <img src="https://uploads.scratch.mit.edu/get_image/project/1216321571_480x360.png" alt="Image">
+            <img src="https://uploads.scratch.mit.edu/get_image/project/1216321571_480x360.png" alt="Image" class="addon-image">
         </div>
         <div class="text-content">
-            <h1 class="title">forkphorus player</h1>
-            <p class="description">Please use id:7!!</p>
+            <h1 class="title">FPS Booster</h1>
+            <p class="description">This addon cuts corners on every part of Scratch Mobile, therefore making the FPS(frames per second) on projects higher.</p>
             <p class="id-text">id:1</p>
         </div>
     </div>
-    
-</body>
-</html>
+    <script>
+document.querySelectorAll(".addon-image").forEach(image => {
+    image.addEventListener("click", () => {
+        const container = image.closest(".container"); 
+        const messageElement = container.querySelector(".id-text");
+
+        if (messageElement) { 
+            const message = messageElement.textContent.trim();
+            window.parent.postMessage(message, "*");
+            console.log('Message sent:', message);
+        }
+    });
+});
